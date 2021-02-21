@@ -2,28 +2,32 @@
 const quizContainer = document.getElementById('quiz-container');
 let secondsLeft = 100
 let timer = document.getElementById('timer')
-<<<<<<< HEAD
-let button = document.getElementById('buttonMain');
+const button = document.getElementById('buttonMain');
 let index = 0;
+let timerInterval = 0;
 let welcomeText = document.getElementById('welcome');
+let questionsText = document.getElementById('questions-container');
+let questionsList = document.getElementById('questionsList');
+console.log(questionsText);
+console.log(questionsList);
+
+
+
 const questions = [
-  {questionTitle : 'What is the 2+2?',
-  choices : ['1', '2', '3', '4'],
-  answer:'4'
+  {
+  questionTitle : 'What is the 2+2?',
+  questionChoices : ['1', '2', '3', '4'],
+  questionAnswer:'4'
   },
   {questionTitle : 'Sample Question',
-  choices : ['wrong', 'wrong2', 'wrong3', 'correct'],
-  answer: 'correct'
+  questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
+  questionAnswer: 'correct'
 
   }
 ];
 
 
 
-=======
-let button = document.getElementById("buttonMain");
-let timerInterval = 0
->>>>>>> 7882c96cc256404dfbd610a40a1dcbb0a423fcf3
 
 // let buttonMain = document.getElementById('buttonMain')
 // buttonMain.textContent('Start!')
@@ -55,5 +59,11 @@ button.addEventListener('click', function () {
 });
 
 // function switchDiv (index) {
-//   welcomeText.innerHTML = ''
+//   // questionsText.innerHTML = ''
+//   for (let i = 0; i < questions.length; i++ ) {
+//     // let generatedChoices = questions[index].questionChoices
+//     let generatedQuestion = questions[index].questionTitle
+//     questionText.textContent = generatedQuestion
+//   }
+
 // }
