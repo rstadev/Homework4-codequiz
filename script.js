@@ -106,8 +106,8 @@ function switchDiv (index) {
   // itemList.addEventListener('click', checkAnswer());
 };
 
-let clickButtons = document.querySelector('.choiceButtons');
-console.log(clickButtons)
+// let clickButtons = document.querySelector('.choiceButtons');
+// console.log(clickButtons)
 
 
 
@@ -115,18 +115,18 @@ console.log(clickButtons)
 // document.querySelector('choiceButtons').onclick = function () {
 //   console.log('Click!')
 
-  function checkAnswer(val) {
-    console.log(val);
-    console.log(questions[index].questionAnswer);
-    if (val.textContent === questions[index].questionAnswer) {
-     console.log('correct!') 
-    }
-  };
+function checkAnswer(val) {
+  // console.log(val);
+  // console.log(questions[index].questionAnswer);
+  if (val === questions[index].questionAnswer) {
+   console.log('correct!') 
+  }
+};
 
 
 
 
-//---------------------Future code that will likely help with Highscores------------
+//---------------------Future code that will likely help with Highscores----------------
 // const arrParsed = JSON.parse(localStorage.getItem('name')) || []
 
 // const addToStoraged = item => {
