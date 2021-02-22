@@ -1,7 +1,15 @@
-/* .text-muted {
-    opacity: 0;
-} */
-
 .invisible {
     opacity: 0
+}
+
+#questions-container {
+    margin: auto;
+    width: 50%;
+    border: 3px solid lightslategray;
+    padding: 10px;
+  }
+
+.choiceButtons {
+    padding: 10px;
+    margin: left;
 }
