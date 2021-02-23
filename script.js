@@ -136,16 +136,51 @@ switchDiv(index);
 function endGame() {
   if (index >= 4 || secondsLeft <= 0) {
     questionsText.innerHTML = '';
-    let highscoreTitle = document.createElement('h2');
-    highscoreTitle.textContent = 'Enter in your initials to record your highscore!';
+    timer.setAttribute('class', 'invisible')
+    const highscoreTitle = document.createElement('h2');
+    
+    highscoreTitle.textContent = 'Enter in your initials to record your highscore! Your score is: ' + score;
+    
     questionsText.appendChild(highscoreTitle);
-    let highscore = document.createElement('textarea');
+    
+    const highscore = document.createElement('textarea');
     highscore.setAttribute('class', 'center');
    questionsText.appendChild(highscore);
+   const highscoreButton = document.createElement('button');
+   highscoreButton.textContent = 'Enter'
+   questionsText.appendChild(highscoreButton);
+   
+   
+   
+   
+   
+   
+   
+   highscoreButton.addEventListener('click', function () {
+      userInitials = highscore.value;
+      userScore = score;
+
+      userHighScore = {
+        initials : userInitials,
+        scoreSave : score,
+      }
+
+      console.log(userHighScore)
+    // const arrParsed = JSON.parse(localStorage.getItem);
+    location.href = './highscores.html';
+   });
   } else {
     nextQuestion();
   }
-}
+};
+
+
+
+// const addToStorage = item => {
+//   arrParsed.push(item)
+//     localStorage.setItem('name', JSON.stringify(arrParsed))
+//   };
+
 
 
 //---------------------Future code that will likely help with Highscores----------------
