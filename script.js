@@ -32,21 +32,21 @@ const questions = [
 
   },
   {
-    questionTitle : 'Sample Question3',
-    questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
-    questionAnswer: 'correct',
+    questionTitle : 'What is an example of the proper syntax for creating a function in javascript?',
+    questionChoices : ['function functName{var1, var2} (codeBlock)', 'function functName(var1, var2) {codeBlock}', 'let function = (var1, var2) {codeBlock}', 'set function(var1, var2) = {codeBlock}'],
+    questionAnswer: 'function functName(var1, var2) {codeBlock}',
   
   },
   {
-    questionTitle : 'Sample Question4',
-    questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
-    questionAnswer: 'correct',
+    questionTitle : 'How would you call a function defined as \'sampleFunction\'?',
+    questionChoices : ['sampleFunction();', 'run sampleFunction();', 'call sampleFunction();', 'sampleFunction callback'],
+    questionAnswer: 'sampleFunction();',
   
   },
   {
-    questionTitle : 'Sample Question5',
-    questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
-    questionAnswer: 'correct',
+    questionTitle : 'Which of these options is the correct way to write an if statement with a \'1 is less than 2\' operator?',
+    questionChoices : ['if (1 < 2) = {codeBlock}', 'run if (1 > 2) {codeBlock}', 'if: 1 < 2 {codeBlock}', 'if (1 < 2) {codeBlock}'],
+    questionAnswer: 'if (1 < 2) {codeBlock}',
   
   },
 ];

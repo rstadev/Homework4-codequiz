@@ -4,9 +4,9 @@
 
 #questions-container {
     margin: auto;
-    width: 50%;
+    width: 100%;
     border: 3px solid lightslategray;
-    padding: 10px;
+    padding: 20px;
   }
 
 .choiceButtons {
