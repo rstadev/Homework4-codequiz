@@ -8,6 +8,9 @@ let timerInterval = 0;
 const welcomeText = document.getElementById('welcome');
 const questionsText = document.getElementById('questions-container');
 const questionsList = document.getElementById('questionsList');
+// const cOrW = document.getElementById('correctornot');
+
+// console.log(cOrW)
   
 
 let score = 0;
@@ -23,25 +26,25 @@ const questions = [
   
   },
   {
-  questionTitle : 'Sample Question',
+  questionTitle : 'Sample Question2',
   questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
   questionAnswer: 'correct',
 
   },
   {
-    questionTitle : 'Sample Question',
+    questionTitle : 'Sample Question3',
     questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
     questionAnswer: 'correct',
   
   },
   {
-    questionTitle : 'Sample Question',
+    questionTitle : 'Sample Question4',
     questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
     questionAnswer: 'correct',
   
   },
   {
-    questionTitle : 'Sample Question',
+    questionTitle : 'Sample Question5',
     questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
     questionAnswer: 'correct',
   
@@ -119,10 +122,29 @@ function checkAnswer(val) {
   // console.log(val);
   // console.log(questions[index].questionAnswer);
   if (val === questions[index].questionAnswer) {
-   console.log('correct!') 
+   console.log('correct!')
+   let cOrW = document.createElement('p');
+   cOrW.textContent = 'Correct';
+   questionsText.appendChild(cOrW)
+   score += 10
+   console.log(score)
+   nextQuestion();
+  } else {
+    console.log('wrong!')
+    cOrW = document.createElement('p');
+    cOrW.textContent = 'Wrong!';
+    secondsLeft = secondsLeft -= 10
+    questionsText.appendChild(cOrW)
+    nextQuestion();
   }
 };
 
+function nextQuestion() {
+index = index++;
+
+switchDiv(index);
+
+}
 
 
 
