@@ -56,14 +56,15 @@ button.addEventListener('click', function () {
       }, 1000);
     }
   }
+  //Set time begins the timer.
   setTime();
   welcomeText.innerHTML = '';
-  
-  switchDiv(0);
+  ///Calls switchDiv to begin the quiz.
+  switchDiv();
   button.setAttribute('id', 'invisible')
 });
 
-
+//This generates new questions everytime a button is pressed.
 function switchDiv (index) {
     questionsText.innerHTML = '';
     let generatedQuestion = questions[index].questionTitle;
@@ -71,11 +72,12 @@ function switchDiv (index) {
   for (let i = 0; i < questions.length; i++ ) {
     questionsText.textContent = generatedQuestion;
   };
-
+//forEach loops through the array within the questions object list and generates buttons from the choices within.
   choicesArray.forEach(function (newItemGen) {
     let itemList = document.createElement('button');
     itemList.textContent = newItemGen;
     itemList.setAttribute('class', 'choiceButtons');
+    //very important. this.textContent is the val parameter in our checkAnswer function, and allows the text from the button to directly be compared against the text from our questions databank.
     itemList.setAttribute('onclick', 'checkAnswer(this.textContent)');
     console.log(newItemGen)
     questionsText.appendChild(itemList);
@@ -84,7 +86,7 @@ function switchDiv (index) {
 };
 
 
-
+//This function acts as our score and timer keeper, and acts as a middle man in the code. Takes user input from the buttons generated and checks them with our correct answer databank. Score is either added or time is subtracted.
 function checkAnswer(val) {
 
   if (val === questions[index].questionAnswer) {
@@ -105,14 +107,14 @@ function checkAnswer(val) {
 
   }
 };
-
+//nextQuestion increments the index then passes it through switchDiv. This allows the game to follow the index number, and creates opportunity for manipulation through the course of the game.
 function nextQuestion() {
 index = ++index;
 console.log(index)
 
 switchDiv(index);
 }
-
+//endGame acts as our 'game stopper'. It continously checks if the game should be over when the user presses a choice button. If it needs to be over, it generates the highscore input page. If not, then it calls nextQuestion to increment and continue the game.
 function endGame() {
   if (index >= 4 || secondsLeft <= 0) {
     questionsText.innerHTML = '';
@@ -135,17 +137,17 @@ function endGame() {
    
    
    
-   
+   //adds another event that allows the button to enter in a highscore to local storage.
    highscoreButton.addEventListener('click', function () {
       userInitials = highscore.value;
       userScore = score;
-
+    //creates our Highscore object for each individual player.
       userHighScore = {
         initials : userInitials,
         scoreSave : score,
       }
       console.log(userHighScore)
-
+      //this either retrieves all local storage or creates an array to begin storage.
       const arrParsed = JSON.parse(localStorage.getItem('Highscore:')) || [];
 
       arrParsed.push(userHighScore)
