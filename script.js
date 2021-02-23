@@ -75,7 +75,7 @@ button.addEventListener('click', function () {
   welcomeText.innerHTML = '';
   
   switchDiv(0);
-  
+  button.setAttribute('id', 'invisible')
 });
 
 console.log(questions[index].questionTitle);
