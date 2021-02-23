@@ -1,7 +1,8 @@
+/* Used to disappear the buttons that aren't being used. */
 #invisible {
     opacity: 0
 }
-
+/* Adds a border that clearly contains the quiz components, as well as the highscores. */
 #questions-container {
     margin: auto;
     width: 100%;

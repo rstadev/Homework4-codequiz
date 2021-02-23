@@ -1,4 +1,6 @@
 //Using const and let because I want to get into the habit.
+
+//Defines most of the variables used in this assignment.
 const quizContainer = document.getElementById('quiz-container');
 let secondsLeft = 50;
 let timer = document.getElementById('timer')
@@ -8,11 +10,9 @@ let timerInterval = 0;
 const welcomeText = document.getElementById('welcome');
 const questionsText = document.getElementById('questions-container');
 const questionsList = document.getElementById('questionsList');
-  
-
 let score = 0;
 
-
+//Questions databank.
 const questions = [
   {
     questionTitle : 'Inside which HTML element would we put JavaScript if it is not in a seperate file?',
@@ -45,7 +45,7 @@ const questions = [
   
   },
 ];
-
+// This defines the button that begins the game, and starts the timer.
 button.addEventListener('click', function () {
   function setTime() {
     if (timerInterval === 0) {
@@ -53,13 +53,6 @@ button.addEventListener('click', function () {
         secondsLeft--;
         timer.textContent = 'Time left: ' + secondsLeft;
         timer.classList.add('text-center');
-        
-        
-        
-        if(secondsLeft === 0) {
-          clearInterval(timerInterval);
-        }
-        
       }, 1000);
     }
   }
@@ -166,44 +159,3 @@ function endGame() {
     nextQuestion();
   }
 };
-
-
-
-// const addToStorage = item => {
-//   arrParsed.push(item)
-//     localStorage.setItem('name', JSON.stringify(arrParsed))
-//   };
-
-
-
-//---------------------Future code that will likely help with Highscores----------------
-// const arrParsed = JSON.parse(localStorage.getItem('name')) || []
-
-// const addToStoraged = item => {
-//   arrParsed.push(item)
-//     localStorage.setItem('name', JSON.stringify(arrParsed))
-//   };
-// addToStoraged();
-// console.log('arrParsed==>>', arrParsed);
-//       //document.getElementById('app').textContent = name
-//--------------------------------------------------------------------------------------
-
-
-// let clickButtons = document.querySelector('.choiceButtons');
-// console.log(clickButtons)
-
-
-
-
-// document.querySelector('choiceButtons').onclick = function () {
-//   console.log('Click!')
-
-// ---------------------------------------------------------------------------------------------
-
-// let generatedQuestion = questions[index].questionTitle;
-// let choicesArray = questions[index].questionChoices;
-
-
-
-// let buttonMain = document.getElementById('buttonMain')
-// buttonMain.textContent('Start!')
