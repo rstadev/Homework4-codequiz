@@ -20,15 +20,15 @@ console.log(questionsText);
 
 const questions = [
   {
-    questionTitle : 'Sample Question',
-    questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
-    questionAnswer: 'correct',
+    questionTitle : 'Inside which HTML element would we put JavaScript if it is not in a seperate file?',
+    questionChoices : ['<script>', '<h1>', '<js>', '<$>'],
+    questionAnswer: '<script>',
   
   },
   {
-  questionTitle : 'Sample Question2',
-  questionChoices : ['wrong', 'wrong2', 'wrong3', 'correct'],
-  questionAnswer: 'correct',
+  questionTitle : 'What is the correct syntax for linking your javascript file to your html webpage?',
+  questionChoices : ['<js src= \'script.js\'>', '<script href= \'script.js\'>', '<script src= \'script.js\'>', '<link href= \'script.js\'>'],
+  questionAnswer: '<script src= \'script.js\'>',
 
   },
   {
@@ -50,16 +50,7 @@ const questions = [
   
   },
 ];
-// let generatedQuestion = questions[index].questionTitle;
-// let choicesArray = questions[index].questionChoices;
 
-
-
-
-
-
-// let buttonMain = document.getElementById('buttonMain')
-// buttonMain.textContent('Start!')
 button.addEventListener('click', function () {
   // console.log(button)
   function setTime() {
@@ -109,14 +100,7 @@ function switchDiv (index) {
   // itemList.addEventListener('click', checkAnswer());
 };
 
-// let clickButtons = document.querySelector('.choiceButtons');
-// console.log(clickButtons)
 
-
-
-
-// document.querySelector('choiceButtons').onclick = function () {
-//   console.log('Click!')
 
 function checkAnswer(val) {
   // console.log(val);
@@ -140,7 +124,8 @@ function checkAnswer(val) {
 };
 
 function nextQuestion() {
-index = index++;
+index = ++index;
+console.log(index)
 
 switchDiv(index);
 
@@ -159,3 +144,23 @@ switchDiv(index);
 // console.log('arrParsed==>>', arrParsed);
 //       //document.getElementById('app').textContent = name
 //--------------------------------------------------------------------------------------
+
+
+// let clickButtons = document.querySelector('.choiceButtons');
+// console.log(clickButtons)
+
+
+
+
+// document.querySelector('choiceButtons').onclick = function () {
+//   console.log('Click!')
+
+// ---------------------------------------------------------------------------------------------
+
+// let generatedQuestion = questions[index].questionTitle;
+// let choicesArray = questions[index].questionChoices;
+
+
+
+// let buttonMain = document.getElementById('buttonMain')
+// buttonMain.textContent('Start!')
