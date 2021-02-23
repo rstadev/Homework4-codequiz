@@ -1,6 +1,6 @@
 //Using const and let because I want to get into the habit.
 const quizContainer = document.getElementById('quiz-container');
-let secondsLeft = 100
+let secondsLeft = 50;
 let timer = document.getElementById('timer')
 const button = document.getElementById('buttonMain');
 let index = 0;
@@ -112,14 +112,17 @@ function checkAnswer(val) {
    questionsText.appendChild(cOrW)
    score += 10
    console.log(score)
-   nextQuestion();
+   endGame();
+  //  nextQuestion();
   } else {
     console.log('wrong!')
     cOrW = document.createElement('p');
     cOrW.textContent = 'Wrong!';
     secondsLeft = secondsLeft -= 10
     questionsText.appendChild(cOrW)
-    nextQuestion();
+    endGame();
+
+    // nextQuestion();
   }
 };
 
@@ -128,9 +131,21 @@ index = ++index;
 console.log(index)
 
 switchDiv(index);
-
 }
 
+function endGame() {
+  if (index >= 4 || secondsLeft <= 0) {
+    questionsText.innerHTML = '';
+    let highscoreTitle = document.createElement('h2');
+    highscoreTitle.textContent = 'Enter in your initials to record your highscore!';
+    questionsText.appendChild(highscoreTitle);
+    let highscore = document.createElement('textarea');
+    highscore.setAttribute('class', 'center');
+   questionsText.appendChild(highscore);
+  } else {
+    nextQuestion();
+  }
+}
 
 
 //---------------------Future code that will likely help with Highscores----------------
