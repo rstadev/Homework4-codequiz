@@ -164,10 +164,17 @@ function endGame() {
         initials : userInitials,
         scoreSave : score,
       }
-
       console.log(userHighScore)
+
+      const arrParsed = JSON.parse(localStorage.getItem('Highscore:')) || [];
+
+      arrParsed.push(userHighScore)
+
+      localStorage.setItem('Highscore:', JSON.stringify(arrParsed));
+
+
     // const arrParsed = JSON.parse(localStorage.getItem);
-    location.href = './highscores.html';
+    // location.href = './highscores.html';
    });
   } else {
     nextQuestion();
