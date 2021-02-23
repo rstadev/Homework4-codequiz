@@ -2,7 +2,7 @@
 
 //Defines most of the variables used in this assignment.
 const quizContainer = document.getElementById('quiz-container');
-let secondsLeft = 50;
+let secondsLeft = 40;
 let timer = document.getElementById('timer')
 const button = document.getElementById('buttonMain');
 let index = 0;
@@ -59,8 +59,8 @@ button.addEventListener('click', function () {
   //Set time begins the timer.
   setTime();
   welcomeText.innerHTML = '';
-  ///Calls switchDiv to begin the quiz.
-  switchDiv();
+  ///Calls switchDiv to begin the quiz. Parameter has to be 0 to start the quiz.
+  switchDiv(0);
   button.setAttribute('id', 'invisible')
 });
 
