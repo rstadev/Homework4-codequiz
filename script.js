@@ -8,14 +8,9 @@ let timerInterval = 0;
 const welcomeText = document.getElementById('welcome');
 const questionsText = document.getElementById('questions-container');
 const questionsList = document.getElementById('questionsList');
-// const cOrW = document.getElementById('correctornot');
-
-// console.log(cOrW)
   
 
 let score = 0;
-console.log(questionsText);
-// console.log(questionsList);
 
 
 const questions = [
@@ -52,12 +47,10 @@ const questions = [
 ];
 
 button.addEventListener('click', function () {
-  // console.log(button)
   function setTime() {
     if (timerInterval === 0) {
       timerInterval = setInterval(function() {
         secondsLeft--;
-        // timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
         timer.textContent = 'Time left: ' + secondsLeft;
         timer.classList.add('text-center');
         
@@ -65,7 +58,6 @@ button.addEventListener('click', function () {
         
         if(secondsLeft === 0) {
           clearInterval(timerInterval);
-          // sendMessage();
         }
         
       }, 1000);
@@ -78,7 +70,6 @@ button.addEventListener('click', function () {
   button.setAttribute('id', 'invisible')
 });
 
-console.log(questions[index].questionTitle);
 
 function switchDiv (index) {
     questionsText.innerHTML = '';
@@ -97,14 +88,12 @@ function switchDiv (index) {
     questionsText.appendChild(itemList);
     
   })
-  // itemList.addEventListener('click', checkAnswer());
 };
 
 
 
 function checkAnswer(val) {
-  // console.log(val);
-  // console.log(questions[index].questionAnswer);
+
   if (val === questions[index].questionAnswer) {
    console.log('correct!')
    let cOrW = document.createElement('p');
@@ -113,7 +102,6 @@ function checkAnswer(val) {
    score += 10
    console.log(score)
    endGame();
-  //  nextQuestion();
   } else {
     console.log('wrong!')
     cOrW = document.createElement('p');
@@ -122,7 +110,6 @@ function checkAnswer(val) {
     questionsText.appendChild(cOrW)
     endGame();
 
-    // nextQuestion();
   }
 };
 
@@ -173,8 +160,7 @@ function endGame() {
       localStorage.setItem('Highscore:', JSON.stringify(arrParsed));
 
 
-    // const arrParsed = JSON.parse(localStorage.getItem);
-    // location.href = './highscores.html';
+    location.href = './highscores.html';
    });
   } else {
     nextQuestion();
